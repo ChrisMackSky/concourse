@@ -214,6 +214,7 @@ func flyLogin(target, team, username, password string) *gexec.Session {
 		"-n", team,
 		"-u", username,
 		"-p", password,
+		"-k",
 	)
 	wait(sess, false)
 	return sess
