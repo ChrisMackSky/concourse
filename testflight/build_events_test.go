@@ -23,7 +23,7 @@ var _ = Describe("Build Events", func() {
 		}{}
 		json.Unmarshal(buildsRaw, &builds)
 
-		sess = spawnFly("curl", builds[0].ApiUrl+"/events", "--", "--max-time", "5")
+		sess = spawnFly("curl", builds[0].ApiUrl+"/events", "--", "--max-time", "5", "-k")
 		wait(sess, true)
 
 		buildEvents := sess.Out.Contents()
